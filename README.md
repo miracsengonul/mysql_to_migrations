@@ -38,7 +38,7 @@ database/migrations klasörünün chmod(izin) ayarlarını 777 yaparak klasöre 
 #Kullanımı
 
 
-routes/web.php içerisinde
+İster routes/web.php içerisinde
 ```php
 Route::get('export', function (){
 
@@ -47,7 +47,7 @@ Route::get('export', function (){
 });
 ```
 
-Controller dosyanızın içerisinde ise
+İsterseniz de Controller dosyanızın içerisinde
 ```php
 
 use mirac\m2m\M2M;
