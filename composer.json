@@ -1,0 +1,20 @@
+{
+    "name": "mirac/m2m",
+    "description": "Mysql To Migrations",
+    "type": "laravel",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Miraç Şengönül",
+            "email": "miracsengonul@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+
+    "autoload": {
+    "psr-4": {
+      "mirac\\m2m\\": "src"
+    }
+  }
+  
+}
