@@ -4,7 +4,8 @@
 Bu paket ile Mysql veritabanınızı migration dosyası haline getirebilirsiniz.
 
 
-Kurulum için öncelikle paketi kurunuz.
+
+Öncelikle paketi kurarak başlayalım.
 ```
 composer require mirac/m2m dev-master
 ```
