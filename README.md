@@ -1,7 +1,7 @@
 # #Laravel 5 Mysql to Migrations Paketi
 
 
-Bu paket ile Mysql veritabanınızı migration dosyası haline getirebilirsiniz.
+Bu paket ile Laravel 5.1 ve yukarısı için Mysql veritabanınızı migration dosyası haline getirebilirsiniz.
 
 
 
