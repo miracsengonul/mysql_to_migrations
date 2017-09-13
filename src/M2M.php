@@ -77,6 +77,8 @@ class M2M
     protected function header($table_name)
     {
 
+        $table_name = str_replace('_', '',$table_name);
+        
         return
             '
     <?php
