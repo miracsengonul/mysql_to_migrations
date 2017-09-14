@@ -25,6 +25,8 @@ class M2M
     protected $is_default;
 
     protected $extra;
+    
+    protected $unique;
 
     function __construct()
     {
@@ -56,8 +58,9 @@ class M2M
                 $this->lenght = $get_colomn->CHARACTER_MAXIMUM_LENGTH;
                 $this->is_default = $get_colomn->COLUMN_DEFAULT;
                 $this->extra = $get_colomn->EXTRA;
+                $this->unique = $get_colomn->COLUMN_KEY;
 
-                $content .= $this->type() . $this->extras();
+                $content .= $this->type() . $this->extras() . $this->index_extras();
 
             }
 
@@ -153,11 +156,16 @@ class M2M
     protected function extras()
     {
         if ($this->is_null == 'YES')
-            return "->nullable();\n";
+            return "->nullable()";
 
         elseif ($this->is_default != NULL)
-            return "->default($this->is_default);\n";
+            return "->default($this->is_default)";
+    }
 
+    protected function index_extras()
+    {
+        if ($this->unique == 'UNI')
+            return "->unique();\n";
 
         return $this->extra = ";\n";
     }
