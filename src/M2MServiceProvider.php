@@ -2,29 +2,38 @@
 
 namespace mirac\m2m;
 
+use mirac\m2m;
 use Illuminate\Support\ServiceProvider;
 
 class M2MServiceProvider extends ServiceProvider
 {
     /**
-     * Bootstrap the application services.
+     * Indicates if loading of the provider is deferred.
      *
-     * @return void
+     * @var bool
      */
-    public function boot()
-    {
-        //
-    }
+    protected $defer = true;
 
     /**
-     * Register the application services.
+     * Register the service provider.
      *
      * @return void
      */
     public function register()
     {
-        return $this->app->bind('m2m',function(){
-            return new M2M(config('app.m2m'));
+        $this->app->singleton(M2M::class, function ($app) {
+            return new M2M($app['config']['m2m']);
         });
     }
+
+    /**
+     * Get the services provided by the provider.
+     *
+     * @return array
+     */
+    public function provides()
+    {
+        return [M2M::class];
+    }
+
 }
